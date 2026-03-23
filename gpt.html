@@ -1,0 +1,386 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruiter Hub</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI",sans-serif;
+}
+
+body{
+display:flex;
+height:100vh;
+background:#f3f4f7;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+width:270px;
+background:linear-gradient(180deg,#1e1b4b,#2b256b);
+color:white;
+display:flex;
+flex-direction:column;
+padding:25px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:40px;
+}
+
+.logo-icon{
+width:40px;
+height:40px;
+background:linear-gradient(135deg,#4fd1ff,#6a5cff);
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+}
+
+.logo-text{
+font-size:20px;
+font-weight:600;
+}
+
+.logo-sub{
+font-size:12px;
+color:#b8b9ff;
+}
+
+.menu{
+list-style:none;
+margin-top:20px;
+}
+
+.menu li{
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px 15px;
+border-radius:10px;
+margin-bottom:10px;
+cursor:pointer;
+color:#cfd3ff;
+}
+
+.menu li:hover{
+background:rgba(255,255,255,0.08);
+}
+
+.active{
+background:rgba(255,255,255,0.15);
+}
+
+.sidebar-bottom{
+margin-top:auto;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.user{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:15px;
+}
+
+.avatar{
+width:40px;
+height:40px;
+border-radius:50%;
+background:linear-gradient(135deg,#6a5cff,#9b8cff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+.user-info{
+font-size:14px;
+}
+
+.user-email{
+font-size:12px;
+color:#b9baff;
+}
+
+.signout{
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+font-size:14px;
+color:#cfd3ff;
+}
+
+/* MAIN */
+
+.main{
+flex:1;
+padding:35px;
+}
+
+.date{
+text-align:right;
+font-size:14px;
+color:#777;
+}
+
+.header{
+margin-top:10px;
+}
+
+.header h1{
+font-size:32px;
+margin-bottom:6px;
+}
+
+.header p{
+color:#666;
+}
+
+/* SEARCH BOX */
+
+.search-box{
+margin-top:25px;
+background:white;
+padding:15px;
+border-radius:14px;
+display:flex;
+gap:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.search{
+flex:1;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.select{
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+background:white;
+}
+
+.result{
+margin-top:20px;
+font-size:14px;
+color:#666;
+}
+
+/* CARD */
+
+.card{
+margin-top:20px;
+background:white;
+border-radius:14px;
+padding:25px;
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+box-shadow:0 4px 14px rgba(0,0,0,0.06);
+}
+
+.profile{
+display:flex;
+gap:15px;
+}
+
+.profile-avatar{
+width:55px;
+height:55px;
+border-radius:50%;
+background:linear-gradient(135deg,#7f7cff,#9d8bff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:bold;
+font-size:20px;
+}
+
+.profile-info h3{
+font-size:18px;
+}
+
+.profile-info p{
+font-size:14px;
+color:#777;
+margin-bottom:8px;
+}
+
+.tags span{
+background:#eef0ff;
+color:#4b4bb5;
+padding:5px 10px;
+border-radius:12px;
+font-size:12px;
+margin-right:6px;
+}
+
+.strength{
+margin-top:15px;
+}
+
+.strength span{
+background:#f0f0f0;
+padding:8px 12px;
+border-radius:10px;
+font-size:12px;
+margin-right:8px;
+}
+
+.stats{
+display:flex;
+gap:40px;
+text-align:center;
+}
+
+.stat-title{
+font-size:12px;
+color:#777;
+}
+
+.stat-value{
+font-size:20px;
+font-weight:600;
+}
+
+.growth{
+color:#16a34a;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<div class="logo-icon"><i class="fa-solid fa-brain"></i></div>
+<div>
+<div class="logo-text">SkillProbe</div>
+<div class="logo-sub">AI Skill Evaluator</div>
+</div>
+</div>
+
+<ul class="menu">
+<li><i class="fa-solid fa-table-columns"></i> Dashboard</li>
+<li><i class="fa-solid fa-upload"></i> Upload Project</li>
+<li><i class="fa-solid fa-folder"></i> My Projects</li>
+<li><i class="fa-solid fa-chart-line"></i> Evaluations</li>
+<li class="active"><i class="fa-solid fa-users"></i> Recruiter Hub</li>
+</ul>
+
+<div class="sidebar-bottom">
+
+<div class="user">
+<div class="avatar">R</div>
+<div class="user-info">
+<div>Ramadharshini</div>
+<div class="user-email">ramadharshini18@gmail.com</div>
+</div>
+</div>
+
+<div class="signout">
+<i class="fa-solid fa-right-from-bracket"></i> Sign Out
+</div>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="date">Monday, March 9, 2026</div>
+
+<div class="header">
+<h1>Recruiter Hub</h1>
+<p>Browse and filter top candidates by skills and performance</p>
+</div>
+
+<div class="search-box">
+<input class="search" placeholder="Search by name, email, or role...">
+<select class="select">
+<option>Sort by Score</option>
+</select>
+<select class="select">
+<option>All Scores</option>
+</select>
+</div>
+
+<div class="result">1 candidate found</div>
+
+<div class="card">
+
+<div>
+
+<div class="profile">
+
+<div class="profile-avatar">R</div>
+
+<div class="profile-info">
+<h3>Ramadharshini</h3>
+<p>ramadharshini18@gmail.com</p>
+
+<div class="tags">
+<span>Junior Full Stack Developer</span>
+<span>Technical Intern</span>
+<span>Assistant Software Engineer</span>
+</div>
+
+<div class="strength">
+<span>Demonstrated some understanding of facial recognition</span>
+<span>Showed awareness of user experience concepts</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div>
+<div class="stat-title">Score</div>
+<div class="stat-value">45</div>
+</div>
+
+<div>
+<div class="stat-title">Projects</div>
+<div class="stat-value">1</div>
+</div>
+
+<div>
+<div class="stat-title">Growth</div>
+<div class="stat-value growth">+60</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

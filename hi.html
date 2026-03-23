@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+        body{
+            display: flex;
+            background: #f5f6fa;
+            height: 100vh;
+        }
+        .sidebar{
+            width:260px;
+            background:linear-gradient(#1e1b4b,#312e81);
+            color:white;
+            padding:30px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            margin-bottom:40px;
+        }
+        .logo-icon{
+            font-size:26px;
+        }
+        .logo-title{
+            font-size:22px;
+            font-weight:600;
+        }
+        .logo-sub{
+            font-size:12px;
+            color:#b5b6ff;
+        }
+        .menu{
+            list-style:none;
+        }
+        .menu li{
+            padding:12px 15px;
+            border-radius:10px;
+            margin-bottom:10px;
+            cursor:pointer;
+            font-size:16px;
+            color:#cfd3ff;
+            transition:0.2s;
+        }
+        .menu li:hover{
+            background:rgba(255,255,255,0.1);
+        }
+        .menu li.active{
+            background:rgba(255,255,255,0.2);
+            color:white;
+        }
+        .active{
+            background: #3b3790;
+            color: white;
+        }
+        .sidebar-bottom{
+            margin-top: auto;
+        }
+        .name{
+            font-size: 16px;
+            font-weight: 500;
+        } 
+        .email{
+            font-size: 14px;
+            color: #cfd3ff;
+            margin-bottom: 15px;
+        }
+        .signout{
+            font-size: 14px;
+            color: #cfd3ff;
+            cursor: pointer;
+        }
+        .main{
+            flex: 1;
+            padding: 30px;
+        }
+        .date{
+            font-size: 14px;
+            color: #888;
+            text-align: right;
+        }
+        .header-title{
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .header-sub{
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .search-section{
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .search{
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .select{
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+        }
+        .result-count{
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .card{
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+        }
+        .left{
+            flex: 1;
+        }
+        .name{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .email{
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .roles span{
+            display: inline-block;
+            background: #d3bee5;
+            color: #8d759b;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .strengths-title{
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        .strength-box{
+            display: inline-block;
+            background: #eee;
+            color: #555;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+        .stats{
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+        .stat-title{
+            font-size: 14px;
+            color: #555;
+        }
+        .stat-value{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .growth{
+            color: rgb(19, 195, 19);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">SkillProbe</div>
+        <ul class="menu">
+            <li>Dashboard</li>
+            <li>Upload Project</li>
+            <li>My Projects</li>
+            <li>Evaluations</li>
+            <li>Recruiter Hub</li>
+        </ul>
+        <div class="sidebar-bottom">
+            <div class="name">Ethikhasan</div>
+            <div class="email">ethikhasans.cs24@bitsathy.ac.in</div>
+            <div class="signout">Sign Out</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="date">Wednesday, March 11, 2026</div>
+        <div class="header-title">Recruiter Hub</div>
+        <div class="header-sub">Browse and filter top candidates by skills and performance</div>
+        <div class="search-section">
+            <input class="search" placeholder="Search by name, email, or role...">
+            <select class="select">
+                <option>Sort by Score</option>
+            </select>
+            <select class="select">
+                <option>All Scores</option>
+            </select>
+        </div>
+        <div class="result-count">1 candidate found</div>
+        <div class="card">
+            <div class="left">
+                <div>
+                    <div class="name">Ethikhasan</div>
+                    <div class="email">ethikhasans.cs24@bitsathy.ac.in</div>
+                    <div class="roles">
+                        <span>Junior Full Stack Developer</span>
+                        <span>Technical Intern</span>
+                        <span>Assistant Software Engineer</span>
+                    </div>
+                    <div class="strengths">
+                        <div class="strengths-title">Top Strengths</div>
+                        <span class="strength-box">Demonstrated some understanding of facial rec...</span>
+                        <span class="strength-box">Showed an awarness of user experience con...</span>    
+                    </div>
+                </div>
+            </div>
+            <div class="stats">
+                <div>
+                    <div class="stat-title">Score</div>
+                    <div class="stat-value">45</div>
+                </div>
+                <div>
+                    <div class="stat-title">Projects</div>
+                    <div class="stat-value">1</div>
+                </div>
+                <div>
+                    <div class="stat-title">Growth</div>
+                    <div class="stat-value growth">+60</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
